@@ -1,0 +1,31 @@
+<html>
+    <head>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.7.2.min.js"></script>
+    <script>
+        
+    </script>
+
+    <style>
+        
+        td {
+          width: 2in;
+          text-align: center;  
+        }
+    </style>
+    </head>
+    <body>
+        <h1> ProgVar Score Tracker </h1>
+        <div class='stuff'>
+            <table>
+                <tr> <th>UVA ID</th> <th>NAME </th> <th>TOTAL SOLVED</th><th>SUBMISSIONS</th><th>ACCURACY</th><th>SOLVED THIS WEEK</th></tr>
+                {% for person in persons %}
+                <tr> <td>{{person.uva_id}}</td> <td>{{person.name}}</td>
+                     <td>{{person.total_solved}}</td>
+                     <td>{{person.submissions}}</td>
+                     <td>{{person.accuracy}}%</td>
+                     <td>{{person.getProgress}}</td></tr>
+                {% endfor %}
+            </table>
+        </div>
+    </body>
+</html>
